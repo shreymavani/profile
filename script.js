@@ -17,7 +17,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
 
-const textArray = ['SOFTWARE ENGINEER', 'FULL STACK DEVELOPER', 'PROBLEM SOLVER', 'TECH ENTHUSIAST'];
+const textArray = ['SOFTWARE DEVELOPER', 'BACKEND ENGINEER', 'CLOUD ARCHITECT', 'SYSTEM DESIGNER'];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000;

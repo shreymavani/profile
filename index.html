@@ -13,10 +13,11 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">YourName</div>
+            <div class="logo">Shrey Mavani</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#tech-stack">Tech Stack</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -31,13 +32,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h2 class="greeting">Hi There! I'm <span class="highlight">Your Name</span></h2>
+            <h2 class="greeting">Hi There! I'm <span class="highlight">Shrey Mavani</span></h2>
             <h1 class="title">I AM A <span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
             <p class="hero-description">
-                Welcome to my little corner of the internet. I love building scalable systems, 
-                creating elegant solutions, and turning complex problems into simple, efficient code. 
-                Here, I share my journey, projects, and a way to connect if you want to chat, 
-                collaborate, or work together on something amazing.
+                Welcome to my little corner of the internet. I love building scalable distributed systems, 
+                architecting microservices, and optimizing cloud-native applications. With expertise in 
+                event-driven architectures and observability platforms, I transform complex technical 
+                challenges into elegant, high-performance solutions.
             </p>
             <a href="#contact" class="cta-button">Let's Connect</a>
         </div>
@@ -59,19 +60,21 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a <strong>software engineer</strong> who enjoys building systems that are 
-                        efficient, scalable, and maintainable. Over the years, I've worked on various 
-                        projects ranging from web applications to distributed systems.
+                        I'm a <strong>Software Developer</strong> specializing in building distributed systems 
+                        and observability platforms. Currently at <strong>Cloudera</strong>, I architect and develop 
+                        microservices that process massive telemetry streams and provide actionable insights for 
+                        big data workloads.
                     </p>
                     <p>
-                        I've had the opportunity to work with talented teams at leading companies, 
-                        where I've designed and implemented solutions that handle high-traffic workloads, 
-                        optimized performance, and improved user experiences.
+                        I've led the design and implementation of high-performance analytics platforms leveraging 
+                        <strong>AWS services</strong>, event-driven architectures, and real-time monitoring systems. 
+                        My work enables customers to optimize costs, track resource consumption, and diagnose 
+                        distributed workloads across <strong>Apache Spark, Hive, and Impala</strong>.
                     </p>
                     <p>
-                        Curious and always learning, I thrive on exploring new technologies and solving 
-                        complex technical challenges. Recently, I've been diving into modern frameworks 
-                        and cloud-native architectures.
+                        I graduated from <strong>DAICT</strong> with a BTech in ICT (GPA: 8.3) and have since focused 
+                        on building scalable, high-availability systems. I'm passionate about cloud-native technologies, 
+                        microservices architecture, and leveraging AI for intelligent automation.
                     </p>
                 </div>
                 <div class="about-image">
@@ -84,11 +87,76 @@
                 </div>
             </div>
             
-            <!-- Companies Section -->
-            <div class="companies">
-                <div class="company-logo">Company 1</div>
-                <div class="company-logo">Company 2</div>
-                <div class="company-logo">Company 3</div>
+            <!-- Education & Certifications -->
+            <div class="education-section">
+                <div class="education-card">
+                    <h3>🎓 Education</h3>
+                    <h4>BTech in ICT</h4>
+                    <p>Dhirubhai Ambani Institute of Information and Communication Technology</p>
+                    <p class="date">Graduated: May 2023 | GPA: 8.3</p>
+                </div>
+                <div class="education-card">
+                    <h3>📜 Certifications</h3>
+                    <ul>
+                        <li>Prompt Engineering Programming with OpenAI</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">EXPERIENCE</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="company-header">
+                            <h3>Cloudera, Inc.</h3>
+                            <span class="date">July 2023 - Present</span>
+                        </div>
+                        <h4>Software Developer | Team Observability</h4>
+                        <p class="location">📍 Koramangala, Bangalore</p>
+                        
+                        <ul class="experience-list">
+                            <li>Led the architectural design (HLD/LLD) and implementation of the <strong>Observability Chargeback microservices platform</strong>, leveraging unit pricing and telemetry to enable granular cost reporting (CPU, memory, GPU) across big data clusters</li>
+                            <li>Engineered high-performance analytics and resource tracking microservices powered by <strong>Athena</strong>, optimizing complex queries to efficiently analyze consumption data at multiple granularities (daily, weekly, monthly)</li>
+                            <li>Implemented a comprehensive, <strong>event-driven alerting and monitoring system</strong> using microservices and APIs to expose detailed pod/executor-level metrics for real-time diagnostics of distributed workloads (Apache Spark, Hive, Impala, ML jobs)</li>
+                            <li>Collaborated with cross-functional teams to integrate data across microservices, promoted changes to production in shared DevOps rotations, and resolved high-priority customer issues during on-call escalations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="projects-section">
+                <h3 class="projects-title">Key Projects</h3>
+                
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h4>🏗️ High-Volume Chargeback and Budgets System</h4>
+                        <p>Led HLD/LLD for a distributed system implementing scalable event-driven architecture to ingest and process massive telemetry streams across thousands of clusters.</p>
+                        <ul>
+                            <li>Optimized analytical queries using Athena for cost optimization</li>
+                            <li>Multi-granularity tracking (daily, weekly, monthly)</li>
+                            <li>High-availability alerting with configurable budget notifications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>⚡ Real-Time Diagnostics Platform</h4>
+                        <p>Architected a low-latency monitoring platform delivering comprehensive metadata insights for Impala, Spark, Hive, and ML workloads.</p>
+                        <ul>
+                            <li>Interactive dashboards for job diagnostics</li>
+                            <li>Cross-dimensional workload analysis</li>
+                            <li>Resource consumption visualization</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -97,56 +165,115 @@
     <section id="tech-stack" class="tech-stack">
         <div class="container">
             <h2 class="section-title">My Tech Stack</h2>
-            <p class="section-subtitle">A few of the technologies I enjoy working with.</p>
+            <p class="section-subtitle">Technologies I work with to build scalable systems.</p>
             
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <div class="tech-icon">🐍</div>
-                    <p>Python</p>
+            <div class="tech-category">
+                <h3 class="category-title">Languages & Frameworks</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">☕</div>
+                        <p>Java</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🍃</div>
+                        <p>Spring Boot</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">⚙️</div>
+                        <p>C++</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🐍</div>
+                        <p>Python</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">☕</div>
-                    <p>JavaScript</p>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="category-title">Cloud & Infrastructure</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">☁️</div>
+                        <p>AWS (EC2, Lambda, Kinesis)</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">☸️</div>
+                        <p>Kubernetes</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🐳</div>
+                        <p>Docker</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🏗️</div>
+                        <p>Terraform</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">⚛️</div>
-                    <p>React</p>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="category-title">Databases & Storage</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">⚡</div>
+                        <p>DynamoDB</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🗄️</div>
+                        <p>PostgreSQL</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🔥</div>
+                        <p>Redis</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📊</div>
+                        <p>Athena</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🟢</div>
-                    <p>Node.js</p>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="category-title">Backend & Messaging</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">🔄</div>
+                        <p>Apache Kafka</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📡</div>
+                        <p>AWS Kinesis</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">⚙️</div>
+                        <p>gRPC</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🌐</div>
+                        <p>WebSockets</p>
+                    </div>
                 </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🗄️</div>
-                    <p>PostgreSQL</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🍃</div>
-                    <p>MongoDB</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🐳</div>
-                    <p>Docker</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">☸️</div>
-                    <p>Kubernetes</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">☁️</div>
-                    <p>AWS</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🔥</div>
-                    <p>Redis</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🔍</div>
-                    <p>Elasticsearch</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">🚀</div>
-                    <p>GraphQL</p>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="category-title">Observability & Monitoring</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <div class="tech-icon">📈</div>
+                        <p>Grafana</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🔍</div>
+                        <p>Splunk</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">📊</div>
+                        <p>Kibana</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">🚀</div>
+                        <p>ArgoCD</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,19 +290,23 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <span class="contact-icon">📧</span>
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    <a href="mailto:mavanishrey@gmail.com">mavanishrey@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">🌐</span>
-                    <a href="https://yourwebsite.com" target="_blank">www.yourwebsite.com</a>
+                    <span class="contact-icon">📱</span>
+                    <a href="tel:+917433016153">+91 74330 16153</a>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">💼</span>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://linkedin.com/in/MavaniShrey" target="_blank">LinkedIn: MavaniShrey</a>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">💻</span>
-                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                    <a href="https://github.com/ShreyMavani" target="_blank">GitHub: ShreyMavani</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🧮</span>
+                    <a href="https://leetcode.com/ShreyMavani" target="_blank">LeetCode: ShreyMavani</a>
                 </div>
             </div>
         </div>
@@ -184,7 +315,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Shrey Mavani. All rights reserved.</p>
+            <p class="footer-tagline">Building scalable systems, one microservice at a time.</p>
         </div>
     </footer>
 
