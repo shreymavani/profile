@@ -547,6 +547,18 @@ body {
     margin-bottom: 1rem;
 }
 
+.tech-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.tech-item:hover .tech-logo {
+    transform: scale(1.1);
+}
+
 .tech-item p {
     font-weight: 600;
     color: var(--text-dark);
