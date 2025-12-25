@@ -13,6 +13,26 @@
     --bg-light: #f7fafc;
     --white: #ffffff;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hero-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --primary-color: #818cf8;
+    --secondary-color: #a78bfa;
+    --text-dark: #e2e8f0;
+    --text-light: #cbd5e0;
+    --bg-light: #1a202c;
+    --white: #2d3748;
+    --gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    --hero-bg: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -50,6 +70,51 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-light);
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-dark);
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .moon-icon {
+    display: none;
 }
 
 .logo {
@@ -99,7 +164,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8rem 2rem 4rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--hero-bg);
+    transition: background 0.3s ease;
 }
 
 .hero-content {
@@ -267,7 +333,7 @@ body {
     background: var(--bg-light);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow);
     transition: transform 0.3s;
 }
 
@@ -356,7 +422,8 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: background 0.3s ease;
 }
 
 .company-header {
@@ -440,13 +507,13 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px var(--shadow-hover);
 }
 
 .project-card h4 {
@@ -534,12 +601,12 @@ body {
     border-radius: 15px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
 .tech-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px var(--shadow-hover);
 }
 
 .tech-icon {
@@ -592,7 +659,7 @@ body {
     padding: 1.5rem;
     background: var(--bg-light);
     border-radius: 10px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background 0.3s ease;
 }
 
 .contact-item:hover {
@@ -613,8 +680,9 @@ body {
 .footer {
     padding: 2rem;
     background: var(--text-dark);
-    color: var(--white);
+    color: var(--bg-light);
     text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .footer-tagline {
@@ -623,10 +691,26 @@ body {
     opacity: 0.8;
 }
 
+/* Dark mode specific styles */
+[data-theme="dark"] .navbar {
+    background: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+[data-theme="dark"] .tech-logo,
+[data-theme="dark"] .image-placeholder svg circle,
+[data-theme="dark"] .image-placeholder-square svg rect {
+    filter: brightness(0.9);
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
     .hamburger {
         display: flex;
+    }
+    
+    .theme-toggle {
+        order: -1;
     }
 
     .nav-menu {
