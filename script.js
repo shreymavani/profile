@@ -97,8 +97,8 @@ window.addEventListener('scroll', () => {
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.01,
+    rootMargin: '150px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -114,7 +114,111 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     observer.observe(section);
 });
 
+// Counter animation for stats
+function animateCounter(element, target, suffix = '') {
+    const duration = 2000;
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + suffix;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + suffix;
+        }
+    }, 16);
+}
+
+// Animate counters when hero section is visible
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const text = stat.textContent;
+                if (text.includes('M')) {
+                    const num = parseInt(text.replace(/[^0-9]/g, ''));
+                    animateCounter(stat, num, 'M+');
+                } else if (text.includes('K')) {
+                    const num = parseInt(text.replace(/[^0-9]/g, ''));
+                    animateCounter(stat, num, 'K+');
+                } else if (text.includes('$')) {
+                    const num = parseInt(text.replace(/[^0-9]/g, ''));
+                    stat.textContent = '$' + num + 'M+';
+                }
+            });
+            heroObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    heroObserver.observe(heroSection);
+}
+
+// Add scroll progress indicator
+const scrollProgress = document.createElement('div');
+scrollProgress.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+`;
+document.body.appendChild(scrollProgress);
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+});
+
+// Animate project cards on scroll
+const projectObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            projectObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.project-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    projectObserver.observe(card);
+});
+
+// Animate tech items on scroll
+const techObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'scale(1)';
+            }, index * 30);
+            techObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.tech-item').forEach(item => {
+    item.style.opacity = '0';
+    item.style.transform = 'scale(0.8)';
+    item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    techObserver.observe(item);
+});

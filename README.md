@@ -1,102 +1,227 @@
-# Portfolio Website Template
+# Shrey Mavani - Professional Portfolio Website
 
-A modern, responsive portfolio website template inspired by professional developer portfolios. This template is fully customizable and ready to showcase your skills and experience.
+A modern, senior FAANG-level portfolio website showcasing my experience as a Software Developer at Cloudera, specializing in distributed systems and observability platforms.
 
-## Features
+## 🌟 Highlights
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ⚡ Smooth animations and transitions
-- 🔤 Typing effect animation
-- 🎯 Smooth scroll navigation
-- 💫 Fade-in animations on scroll
-- 🎭 Gradient color scheme
-- 📦 No dependencies - pure HTML, CSS, and JavaScript
+- **Impact-Driven**: Showcases $5M+ in customer value delivered
+- **Scale**: Displays work processing 500M+ events/day across 10K+ production clusters
+- **Professional**: FAANG-level design with smooth animations and modern UX
+- **Responsive**: Fully responsive design that works on all devices
+- **Dark Mode**: Beautiful dark/light theme toggle with persistent preference
+- **Performance**: Optimized with smooth animations and lazy loading
 
-## Sections
+## 🎯 Key Features
 
-1. **Navigation** - Fixed navbar with smooth scroll links
-2. **Hero Section** - Eye-catching introduction with animated typing effect
-3. **About Section** - Tell your story and showcase your experience
-4. **Tech Stack** - Display the technologies you work with
-5. **Contact Section** - Make it easy for people to reach you
-6. **Footer** - Simple footer with copyright
+### Hero Section
+- Dynamic typing animation with multiple job titles
+- Real-time counter animations for key metrics:
+  - 500M+ Events/Day
+  - 10K+ Production Clusters
+  - $5M+ Cost Savings
+- Engaging gradient design with floating animations
 
-## Quick Start
+### About Section
+- Comprehensive professional background
+- Quick facts with icon-based design
+- Education and certifications display
+- Clean, readable layout with visual hierarchy
 
-1. **Open the website**
-   - Simply open `index.html` in your web browser
+### Experience Section
+- Timeline-based work experience display
+- Quantifiable achievements with highlighted metrics:
+  - $3.2M+ annual savings from Chargeback platform
+  - 8M+ budget evaluations/day
+  - 18M+ job executions/day
+  - 95% reduction in diagnosis time
+- Color-coded impact metrics
 
-2. **Customize your content**
-   - Replace "Your Name" with your actual name
-   - Update the hero description with your own introduction
-   - Modify the about section with your experience
-   - Update the tech stack with technologies you use
-   - Change contact information with your details
+### Projects Showcase
+- 4 Flagship projects with detailed breakdowns:
+  - **Distributed Chargeback System** - 500M+ events/day processing
+  - **Financial Governance Platform** - 68% performance optimization
+  - **Unified Job Analytics** - 5x faster debugging
+  - **Sub-Second Monitoring** - 95% time reduction
+- Project badges (Production, Enterprise, High-Impact, Real-Time)
+- Technology stack tags for each project
+- Visual metrics cards showing key performance indicators
 
-3. **Customize colors**
-   - Edit the CSS variables in `styles.css` (lines 9-16) to change the color scheme
-   - Modify gradients and backgrounds to match your brand
+### Tech Stack Section
+- Organized by categories:
+  - Languages & Frameworks
+  - Cloud & Infrastructure
+  - Databases & Storage
+  - Backend & Messaging
+  - Observability & Monitoring
+- Visual icons for each technology
+- Hover effects and animations
+- Comprehensive coverage of 30+ technologies
 
-4. **Add your images**
-   - Replace the placeholder SVG graphics with your own photos
-   - Update the company logos with actual logo images
+### Contact Section
+- Multiple contact methods
+- Professional social media links
+- Email, phone, LinkedIn, GitHub, LeetCode
 
-## Customization Guide
+## 🛠️ Technologies Used
 
-### Colors
+### Frontend
+- **HTML5**: Semantic markup
+- **CSS3**: Modern styling with CSS variables for theming
+- **JavaScript (ES6+)**: Interactive features and animations
+
+### Key Libraries & APIs
+- **Google Fonts**: Poppins font family
+- **DevIcons CDN**: Technology logos
+- **Intersection Observer API**: Scroll animations
+- **Local Storage API**: Theme persistence
+
+## 🎨 Design Features
+
+### Animations
+- Fade-in on scroll for all sections
+- Counter animations for statistics
+- Typing effect for job titles
+- Floating SVG graphics
+- Staggered animations for project cards and tech items
+- Smooth hover effects throughout
+- Progress bar indicating scroll position
+
+### Color Scheme
+- **Primary Gradient**: Purple-Blue (#667eea → #764ba2)
+- **Light Theme**: Clean whites and subtle grays
+- **Dark Theme**: Deep blues with high contrast
+- CSS variables for easy theme switching
+
+### Responsive Design
+- Mobile-first approach
+- Breakpoints at 968px and 600px
+- Hamburger menu for mobile navigation
+- Flexible grid layouts
+- Optimized touch targets
+
+## 📊 Performance Metrics Displayed
+
+### Impact Numbers
+- **$3.2M+** annual savings from Chargeback platform
+- **$1.8M** annual savings from Job Analytics
+- **$2M+** in cost savings identified
+- **500M+** telemetry events processed daily
+- **10,000+** production clusters supported
+- **200+** Fortune 500 accounts served
+- **8M+** budget evaluations per day
+- **18M+** job executions per day
+
+### Efficiency Improvements
+- **5x faster** debugging (3+ hours → 12 minutes)
+- **95%** reduction in diagnosis time
+- **68%** alert processing optimization
+- **67%** reduction in budget overruns
+- **28-30%** cluster utilization improvement
+
+## 🚀 Getting Started
+
+### Local Development
+1. Clone the repository
+2. Open `index.html` in your browser
+3. No build process required!
+
+### Deployment
+Simply upload the files to any static hosting service:
+- GitHub Pages
+- Netlify
+- Vercel
+- AWS S3
+- Any web server
+
+## 📁 Project Structure
+
+```
+portfolio-website/
+├── index.html          # Main HTML file
+├── styles.css          # All styling including themes
+├── script.js           # Interactive features
+└── README.md           # Documentation
+```
+
+## 🎯 Best Practices Implemented
+
+### Code Quality
+- ✅ Semantic HTML5
+- ✅ Clean, modular CSS with CSS variables
+- ✅ Modern JavaScript (ES6+)
+- ✅ No external dependencies (except fonts and icons)
+- ✅ Accessible design
+- ✅ SEO-friendly structure
+
+### UX/UI
+- ✅ Smooth animations and transitions
+- ✅ Intuitive navigation
+- ✅ Clear visual hierarchy
+- ✅ Professional typography
+- ✅ Consistent spacing and alignment
+- ✅ Mobile-optimized interactions
+
+### Performance
+- ✅ Lazy loading animations
+- ✅ Optimized images (SVG where possible)
+- ✅ Minimal external dependencies
+- ✅ Efficient CSS selectors
+- ✅ Intersection Observer for scroll animations
+
+## 💡 Customization
+
+### Changing Colors
 Edit the CSS variables in `styles.css`:
+
 ```css
 :root {
     --primary-color: #667eea;
     --secondary-color: #764ba2;
-    --text-dark: #2d3748;
-    --text-light: #718096;
-    --bg-light: #f7fafc;
+    /* ... more variables */
 }
 ```
 
-### Typing Animation
-Modify the text array in `script.js`:
-```javascript
-const textArray = ['SOFTWARE ENGINEER', 'FULL STACK DEVELOPER', 'PROBLEM SOLVER'];
+### Adding Projects
+Add new project cards in the `projects-section` div in `index.html`:
+
+```html
+<div class="project-card">
+    <div class="project-header">
+        <h4>🎯 Project Name</h4>
+        <span class="project-badge">Badge</span>
+    </div>
+    <!-- ... project details -->
+</div>
 ```
 
-### Tech Stack
-Update the tech items in the HTML with your actual technologies. You can also use actual icon libraries like Font Awesome or add real logo images.
+### Updating Contact Info
+Modify the contact section in `index.html` with your information.
 
-### Contact Links
-Replace the placeholder links with your actual social media and contact information.
+## 📱 Browser Support
 
-## Deployment
+- ✅ Chrome (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Edge (latest)
+- ✅ Mobile browsers
 
-You can deploy this website to:
-- **GitHub Pages** - Free hosting for static sites
-- **Netlify** - Drag and drop deployment
-- **Vercel** - Easy deployment with custom domains
-- **Your own hosting** - Upload via FTP/SFTP
+## 🔧 Features to Add (Future)
 
-## Browser Support
+- [ ] Blog section
+- [ ] Testimonials
+- [ ] Resume download button
+- [ ] Contact form with backend
+- [ ] Analytics integration
+- [ ] More project case studies
+- [ ] Skills proficiency bars
+- [ ] GitHub contributions graph
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## 📄 License
 
-## License
-
-Feel free to use this template for your personal portfolio. Customize it to make it your own!
-
-## Tips
-
-- Add your actual photo for a more personal touch
-- Link to your GitHub repositories or projects
-- Consider adding a blog section if you write technical articles
-- Add real company logos if you have permission to use them
-- Include your resume/CV as a downloadable PDF
-- Add analytics to track visitors
+© 2026 Shrey Mavani. All rights reserved.
 
 ---
 
-**Note**: This is a template. Please replace all placeholder content with your own information, images, and links.
+**Built with passion for scalable distributed systems and clean code** 🚀
 
+Last Updated: January 12, 2026
