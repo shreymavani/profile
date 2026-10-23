@@ -2,16 +2,14 @@
 const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
 
-// Check for saved theme preference or default to light mode
 const currentTheme = localStorage.getItem('theme') || 'light';
 htmlElement.setAttribute('data-theme', currentTheme);
 
 themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    htmlElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    const current = htmlElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    htmlElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
 });
 
 // Mobile Navigation Toggle
@@ -22,7 +20,6 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -33,10 +30,16 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 const typedTextSpan = document.querySelector('.typed-text');
 const cursorSpan = document.querySelector('.cursor');
 
-const textArray = ['SOFTWARE DEVELOPER', 'BACKEND ENGINEER', 'CLOUD ARCHITECT', 'SYSTEM DESIGNER'];
-const typingDelay = 100;
-const erasingDelay = 50;
-const newTextDelay = 2000;
+const textArray = [
+    'scalable distributed systems',
+    'RAG-powered AI assistants',
+    'event-driven architectures',
+    'observability platforms',
+    'agentic workflows'
+];
+const typingDelay = 80;
+const erasingDelay = 40;
+const newTextDelay = 2200;
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -62,11 +65,10 @@ function erase() {
         cursorSpan.classList.remove('typing');
         textArrayIndex++;
         if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
+        setTimeout(type, typingDelay + 800);
     }
 }
 
-// Start typing effect when page loads
 document.addEventListener('DOMContentLoaded', () => {
     if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
@@ -77,28 +79,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
-// Add scroll effect to navbar
+// Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.padding = '0.5rem 0';
+        navbar.style.padding = '0.4rem 0';
     } else {
-        navbar.style.padding = '1rem 0';
+        navbar.style.padding = '0.8rem 0';
     }
 });
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.01,
-    rootMargin: '150px 0px -50px 0px'
+    rootMargin: '100px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -110,21 +109,19 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe sections for animation
 document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(section);
 });
 
 // Counter animation for stats
 function animateCounter(element, target, suffix = '') {
     const duration = 2000;
-    const start = 0;
     const increment = target / (duration / 16);
-    let current = start;
-    
+    let current = 0;
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -136,12 +133,10 @@ function animateCounter(element, target, suffix = '') {
     }, 16);
 }
 
-// Animate counters when hero section is visible
 const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
+            document.querySelectorAll('.stat-number').forEach(stat => {
                 const text = stat.textContent;
                 if (text.includes('M')) {
                     const num = parseInt(text.replace(/[^0-9]/g, ''));
@@ -160,18 +155,16 @@ const heroObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    heroObserver.observe(heroSection);
-}
+if (heroSection) heroObserver.observe(heroSection);
 
-// Add scroll progress indicator
+// Scroll progress indicator
 const scrollProgress = document.createElement('div');
 scrollProgress.style.cssText = `
     position: fixed;
     top: 0;
     left: 0;
-    height: 3px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 2px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     z-index: 9999;
     transition: width 0.1s ease;
 `;
@@ -183,34 +176,34 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = scrolled + '%';
 });
 
-// Animate project cards on scroll
-const projectObserver = new IntersectionObserver((entries) => {
+// Staggered card animations
+const cardObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            projectObserver.unobserve(entry.target);
+            }, index * 80);
+            cardObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.project-card').forEach(card => {
+document.querySelectorAll('.project-card, .contact-card').forEach(card => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
+    card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    projectObserver.observe(card);
+    cardObserver.observe(card);
 });
 
-// Animate tech items on scroll
+// Tech item animations
 const techObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'scale(1)';
-            }, index * 30);
+            }, index * 25);
             techObserver.unobserve(entry.target);
         }
     });
@@ -218,7 +211,26 @@ const techObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.tech-item').forEach(item => {
     item.style.opacity = '0';
-    item.style.transform = 'scale(0.8)';
+    item.style.transform = 'scale(0.9)';
     item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     techObserver.observe(item);
+});
+
+// Active nav link highlighting on scroll
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 100;
+    sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-menu a[href="#${id}"]`);
+        if (link) {
+            if (scrollY >= top && scrollY < top + height) {
+                link.style.color = 'var(--primary)';
+            } else {
+                link.style.color = '';
+            }
+        }
+    });
 });
